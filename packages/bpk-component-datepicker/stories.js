@@ -16,6 +16,8 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { storiesOf } from '@storybook/react';
@@ -33,7 +35,7 @@ import {
   addDays,
   startOfDay,
 } from 'bpk-component-calendar/src/date-utils';
-import BpkDatepicker from './index';
+import BpkDatepicker, { type BpkDatePickerProps } from './index';
 
 const formatDate = date => format(date, 'DD/MM/YYYY');
 
@@ -56,8 +58,30 @@ const inputPropsWithEventHandlers = {
   large: true,
 };
 
+type CalendarContainerProps = {
+  ...$Exact<BpkDatePickerProps>,
+  date: ?Date,
+};
+
+type CalendarContainerState = {
+  date: ?Date,
+};
+
 /* eslint-disable react/no-multi-comp */
-class CalendarContainer extends Component {
+class CalendarContainer extends Component<
+  CalendarContainerProps,
+  CalendarContainerState,
+> {
+  static propTypes = {
+    ...BpkDatepicker.propTypes,
+    date: PropTypes.instanceOf(Date),
+  };
+
+  static defaultProps = {
+    ...BpkDatepicker.defaultProps,
+    date: null,
+  };
+
   constructor(props) {
     super(props);
 
@@ -88,25 +112,23 @@ class CalendarContainer extends Component {
   }
 }
 
-CalendarContainer.propTypes = {
-  date: PropTypes.instanceOf(Date),
+type ReturnDatePickerState = {
+  departDate: Date,
+  returnDate: Date,
 };
 
-CalendarContainer.defaultProps = {
-  date: null,
-};
-
-class ReturnDatepicker extends Component {
+class ReturnDatepicker extends Component<{}, ReturnDatePickerState> {
   constructor() {
     super();
 
-    this.minDate = startOfDay(new Date());
-    this.maxDate = startOfDay(addMonths(new Date(), 12));
     this.state = {
       departDate: startOfDay(addDays(new Date(), 1)),
       returnDate: startOfDay(addDays(new Date(), 4)),
     };
   }
+
+  minDate = startOfDay(new Date());
+  maxDate = startOfDay(addMonths(new Date(), 12));
 
   render() {
     return (

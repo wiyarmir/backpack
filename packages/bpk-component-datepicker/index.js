@@ -16,8 +16,14 @@
  * limitations under the License.
  */
 
-import BpkDatepicker from './src/BpkDatepicker';
+/* @flow */
+
+import BpkDatepicker, {
+  type Props as BpkDatePickerProps,
+} from './src/BpkDatepicker';
 import themeAttributes from './src/themeAttributes';
+
+export type { BpkDatePickerProps };
 
 export default BpkDatepicker;
 export { themeAttributes };

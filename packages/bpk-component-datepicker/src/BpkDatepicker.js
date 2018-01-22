@@ -16,12 +16,14 @@
  * limitations under the License.
  */
 
+/* @flow */
+
 import BpkInput, { withOpenEvents } from 'bpk-component-input';
 import BpkModal from 'bpk-component-modal';
 import BpkPopover from 'bpk-component-popover';
 import { cssModules } from 'bpk-react-utils';
 import PropTypes from 'prop-types';
-import React, { Component } from 'react';
+import React, { Component, type Node } from 'react';
 import BpkBreakpoint, { BREAKPOINTS } from 'bpk-component-breakpoint';
 import BpkCalendar, { CustomPropTypes } from 'bpk-component-calendar';
 
@@ -31,39 +33,115 @@ const getClassName = cssModules(STYLES);
 
 const Input = withOpenEvents(BpkInput);
 
-class BpkDatepicker extends Component {
-  constructor(props) {
+type DateFormatterType = (date: Date) => string;
+
+export type Props = {
+  changeMonthLabel: string,
+  closeButtonText: string,
+  daysOfWeek: Array<{
+    name: string,
+    nameAbbr: string,
+    index: number,
+    isWeekend: boolean,
+  }>,
+  formatDate: DateFormatterType,
+  formatDateFull: DateFormatterType,
+  formatMonth: DateFormatterType,
+  id: string,
+  title: string,
+  getApplicationElement: () => Node,
+
+  date: ?Date,
+  dateModifiers: { [string]: Function },
+  inputProps: Object,
+  markOutsideDays: boolean,
+  markToday: boolean,
+  maxDate: Date,
+  minDate: Date,
+  onDateSelect: ?(date: Date) => mixed,
+  onMonthChange: ?() => mixed,
+  showWeekendSeparator: boolean,
+  weekStartsOn: number,
+  initiallyFocusedDate: ?Date,
+  renderTarget: ?() => HTMLElement,
+};
+
+type State = {
+  isOpen: boolean,
+};
+
+class BpkDatepicker extends Component<Props, State> {
+  static propTypes = {
+    // Required
+    changeMonthLabel: PropTypes.string.isRequired,
+    closeButtonText: PropTypes.string.isRequired,
+    daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
+    formatDate: PropTypes.func.isRequired,
+    formatDateFull: PropTypes.func.isRequired,
+    formatMonth: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+    title: PropTypes.string.isRequired,
+    getApplicationElement: PropTypes.func.isRequired,
+    // Optional
+    date: PropTypes.instanceOf(Date),
+    dateModifiers: CustomPropTypes.DateModifiers,
+    inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    markOutsideDays: PropTypes.bool,
+    markToday: PropTypes.bool,
+    maxDate: PropTypes.instanceOf(Date),
+    minDate: PropTypes.instanceOf(Date),
+    onDateSelect: PropTypes.func,
+    onMonthChange: PropTypes.func,
+    showWeekendSeparator: PropTypes.bool,
+    weekStartsOn: PropTypes.number,
+    initiallyFocusedDate: PropTypes.instanceOf(Date),
+    renderTarget: PropTypes.func,
+  };
+
+  static defaultProps = {
+    date: null,
+    dateModifiers: BpkCalendar.defaultProps.dateModifiers,
+    inputProps: {},
+    markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
+    markToday: BpkCalendar.defaultProps.markToday,
+    maxDate: BpkCalendar.defaultProps.maxDate,
+    minDate: BpkCalendar.defaultProps.minDate,
+    onDateSelect: null,
+    onMonthChange: null,
+    showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
+    weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
+    initiallyFocusedDate: null,
+    renderTarget: null,
+  };
+
+  constructor(props: Props) {
     super(props);
 
     this.state = {
       isOpen: false,
     };
-
-    this.onOpen = this.onOpen.bind(this);
-    this.onClose = this.onClose.bind(this);
-    this.handleDateSelect = this.handleDateSelect.bind(this);
   }
 
-  onOpen() {
+  onOpen = () => {
     this.setState({
       isOpen: true,
     });
-  }
+  };
 
-  onClose() {
+  onClose = () => {
     this.setState({
       isOpen: false,
     });
-  }
+  };
 
-  handleDateSelect(dateObj) {
+  handleDateSelect = (dateObj: Date) => {
     this.setState({
       isOpen: false,
     });
     if (this.props.onDateSelect) {
       this.props.onDateSelect(dateObj);
     }
-  }
+  };
 
   render() {
     const {
@@ -170,48 +248,5 @@ class BpkDatepicker extends Component {
     );
   }
 }
-
-BpkDatepicker.propTypes = {
-  // Required
-  changeMonthLabel: PropTypes.string.isRequired,
-  closeButtonText: PropTypes.string.isRequired,
-  daysOfWeek: CustomPropTypes.DaysOfWeek.isRequired,
-  formatDate: PropTypes.func.isRequired,
-  formatDateFull: PropTypes.func.isRequired,
-  formatMonth: PropTypes.func.isRequired,
-  id: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
-  getApplicationElement: PropTypes.func.isRequired,
-  // Optional
-  date: PropTypes.instanceOf(Date),
-  dateModifiers: CustomPropTypes.DateModifiers,
-  inputProps: PropTypes.object, // eslint-disable-line react/forbid-prop-types
-  markOutsideDays: PropTypes.bool,
-  markToday: PropTypes.bool,
-  maxDate: PropTypes.instanceOf(Date),
-  minDate: PropTypes.instanceOf(Date),
-  onDateSelect: PropTypes.func,
-  onMonthChange: PropTypes.func,
-  showWeekendSeparator: PropTypes.bool,
-  weekStartsOn: PropTypes.number,
-  initiallyFocusedDate: PropTypes.instanceOf(Date),
-  renderTarget: PropTypes.func,
-};
-
-BpkDatepicker.defaultProps = {
-  date: null,
-  dateModifiers: BpkCalendar.defaultProps.dateModifiers,
-  inputProps: {},
-  markOutsideDays: BpkCalendar.defaultProps.markOutsideDays,
-  markToday: BpkCalendar.defaultProps.markToday,
-  maxDate: BpkCalendar.defaultProps.maxDate,
-  minDate: BpkCalendar.defaultProps.minDate,
-  onDateSelect: null,
-  onMonthChange: null,
-  showWeekendSeparator: BpkCalendar.defaultProps.showWeekendSeparator,
-  weekStartsOn: BpkCalendar.defaultProps.weekStartsOn,
-  initiallyFocusedDate: null,
-  renderTarget: null,
-};
 
 export default BpkDatepicker;
