@@ -41,7 +41,7 @@ import STYLES from './bpk-banner-alerts-page.scss';
 const getClassName = cssModules(STYLES);
 const componentClassName = getClassName('bpk-banner-alerts-page__component');
 
-const BannerAlertDemo = bpkDemo(BpkBannerAlert, { message: 'hello', type: 'success' });
+const BannerAlertDemo = bpkDemo(BpkBannerAlert, { message: 'Banner alert!', type: 'neutral' });
 
 const BannerAlert = withDefaultProps(BpkBannerAlert, {
   className: componentClassName,
@@ -275,7 +275,7 @@ const components = [
         information.
       </Paragraph>,
     ],
-    examples: [<BannerAlertDemo />],
+    examples: [<BannerAlertDemo />, <BannerAlertDemo customPropValues={{ type: 'warn' }} />],
   },
   {
     id: 'expandable',
