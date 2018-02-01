@@ -29,11 +29,19 @@ import Paragraph from './../../components/Paragraph';
 // import BpkDemo from 'bpk-component-demo';
 import bpkDemo from '../../../../bpk-component-demo';
 
-const InteractiveStarRating = withInteractiveStarRatingState(BpkInteractiveStarRating);
+const InteractiveStarRating = withInteractiveStarRatingState(
+  BpkInteractiveStarRating,
+);
 
-const StarRatingDemo = bpkDemo(BpkStarRating, { rating: 3.5, ratingLabel: '3.5 stars' });
-const DemoDemo = bpkDemo(StarRatingDemo, {});
-const DemoDemoDemo = bpkDemo(DemoDemo, {});
+const StarRatingDemo = bpkDemo(
+  BpkStarRating,
+  'BpkComponentStarRating',
+  'bpk-compopnent-star-rating',
+  {
+    rating: 3.5,
+    ratingLabel: '3.5 stars',
+  },
+);
 
 const components = [
   {
@@ -41,8 +49,8 @@ const components = [
     title: 'Default',
     blurb: [
       <Paragraph>
-        By default, star ratings are shown in a static form. These can be set at half star
-        intervals.
+        By default, star ratings are shown in a static form. These can be set at
+        half star intervals.
       </Paragraph>,
     ],
     examples: [<StarRatingDemo />],
@@ -50,9 +58,17 @@ const components = [
   {
     id: 'large',
     title: 'Large',
-    blurb: [<Paragraph>Similar to the default, but in a large size.</Paragraph>],
+    blurb: [
+      <Paragraph>Similar to the default, but in a large size.</Paragraph>,
+    ],
     examples: [
-      <StarRatingDemo customPropValues={{ rating: 3.5, ratingLabel: '3.5 stars', large: true }} />,
+      <StarRatingDemo
+        customPropValues={{
+          rating: 3.5,
+          ratingLabel: '3.5 stars',
+          large: true,
+        }}
+      />,
     ],
   },
   {
@@ -60,14 +76,17 @@ const components = [
     title: 'Interactive',
     blurb: [
       <Paragraph>
-        This version allows users to leave feedback on a given feature or area by setting a rating.
+        This version allows users to leave feedback on a given feature or area
+        by setting a rating.
       </Paragraph>,
     ],
     examples: [
       <InteractiveStarRating
         id="my-star-rating"
         large
-        getStarLabel={(rating, maxRating) => `${rating} out of ${maxRating} stars`}
+        getStarLabel={(rating, maxRating) =>
+          `${rating} out of ${maxRating} stars`
+        }
       />,
     ],
   },
@@ -76,9 +95,10 @@ const components = [
     title: 'Playground',
     blurb: [
       <Paragraph>
-        The Backpack playground lets you directly modify prop-values and see the results in your
-        browser. It also lets you get a code snippet for the component as you see it before you! We
-        really couldn't make it easier for you! (Well, maybe we could)
+        The Backpack playground lets you directly modify prop-values and see the
+        results in your browser. It also lets you get a code snippet for the
+        component as you see it before you! We really couldn't make it easier
+        for you! (Well, maybe we could)
       </Paragraph>,
     ],
     examples: [
@@ -94,8 +114,9 @@ const StarRatingPage = () => (
     title="Star Ratings"
     blurb={[
       <Paragraph>
-        Star ratings are used for displaying a score within a given range. They can also be a good
-        way of capturing user feedback on a particular feature.
+        Star ratings are used for displaying a score within a given range. They
+        can also be a good way of capturing user feedback on a particular
+        feature.
       </Paragraph>,
     ]}
     components={components}
