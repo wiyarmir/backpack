@@ -23,6 +23,7 @@ import {
   IndexRedirect,
   Redirect,
   withRouter,
+  NotFoundRoute,
 } from 'react-router';
 
 import * as ROUTES from './../constants/routes';
@@ -34,6 +35,7 @@ import TokensLayout from './../layouts/TokensLayout';
 import DocsLayout from './../layouts/DocsLayout';
 
 import HomePage from './../pages/HomePage';
+import FourOhFour from './../pages/FourOhFour';
 
 import GettingStartedPage from './../pages/GettingStartedPage';
 import BackpackReactScriptsPage from './../pages/BackpackReactScriptsPage';
@@ -208,6 +210,8 @@ const Routes = (
     {Object.keys(redirects).map(from => (
       <Redirect key={from} from={from} to={redirects[from]} />
     ))}
+
+    <Route path="*" component={FourOhFour} />
   </Route>
 );
 
