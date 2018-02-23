@@ -32,4 +32,24 @@
   &--docked-left {
     @include bpk-badge--docked-left;
   }
+
+  &--green {
+    @include bpk-badge--green;
+  }
+
+  &--red {
+    @include bpk-badge--red;
+  }
+
+  &--gray {
+    @include bpk-badge--gray;
+  }
+
+  &--white {
+    @include bpk-badge--white;
+  }
+
+  &--outline {
+    @include bpk-badge--outline;
+  }
 }

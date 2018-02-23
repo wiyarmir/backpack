@@ -22,11 +22,29 @@ import { cssModules } from 'bpk-react-utils';
 
 import STYLES from './bpk-badge.scss';
 
+export const BADGE_TYPES = {
+  YELLOW: 'yellow',
+  GREEN: 'green',
+  RED: 'red',
+  GRAY: 'gray',
+  WHITE: 'white',
+  OUTLINE: 'outline',
+};
+
 const getClassName = cssModules(STYLES);
 
+const badgeTypeClassNames = {
+  yellow: null,
+  green: getClassName('bpk-badge--green'),
+  red: getClassName('bpk-badge--red'),
+  gray: getClassName('bpk-badge--gray'),
+  white: getClassName('bpk-badge--white'),
+  outline: getClassName('bpk-badge--outline'),
+};
+
 const BpkBadge = props => {
-  const { docked, centered, className, ...rest } = props;
-  const classNames = [getClassName('bpk-badge')];
+  const { type, docked, centered, className, ...rest } = props;
+  const classNames = [getClassName('bpk-badge'), badgeTypeClassNames[type]];
 
   if (docked === 'right') {
     classNames.push(getClassName('bpk-badge--docked-right'));
@@ -45,12 +63,21 @@ const BpkBadge = props => {
 };
 
 BpkBadge.propTypes = {
+  type: PropTypes.oneOf([
+    BADGE_TYPES.YELLOW,
+    BADGE_TYPES.GREEN,
+    BADGE_TYPES.RED,
+    BADGE_TYPES.GRAY,
+    BADGE_TYPES.WHITE,
+    BADGE_TYPES.OUTLINE,
+  ]),
   docked: PropTypes.oneOf(['right', 'left', null]),
   centered: PropTypes.bool,
   className: PropTypes.string,
 };
 
 BpkBadge.defaultProps = {
+  type: BADGE_TYPES.YELLOW,
   docked: null,
   centered: false,
   className: null,

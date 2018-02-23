@@ -39,7 +39,6 @@
   @include bpk-text;
   @include bpk-text--sm;
 }
-
 /// Centered badge. Modifies the bpk-badge mixin.
 ///
 /// @require {mixin} bpk-badge
@@ -104,4 +103,77 @@
     border-bottom-left-radius: $bpk-border-radius-xs;
     border-bottom-right-radius: 0;
   }
+}
+
+/// Green badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--green();
+///   }
+
+@mixin bpk-badge--green {
+  background-color: $bpk-color-green-500;
+}
+
+/// Red badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--red();
+///   }
+
+@mixin bpk-badge--red {
+  background-color: $bpk-color-red-500;
+  color: $bpk-color-white;
+}
+
+/// Gray badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--gray();
+///   }
+
+@mixin bpk-badge--gray {
+  background-color: $bpk-color-gray-50;
+}
+
+/// White badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--white();
+///   }
+
+@mixin bpk-badge--white {
+  background-color: $bpk-color-white;
+}
+
+/// Outline badge. Modifies the bpk-badge mixin.
+///
+/// @require {mixin} bpk-badge
+///
+/// @example scss
+///   .selector {
+///     @include bpk-badge();
+///     @include bpk-badge--outline();
+///   }
+
+@mixin bpk-badge--outline {
+  border: solid $bpk-border-size-sm $bpk-color-white;
+  background-color: rgba(0, 0, 0, .2);
+  color: $bpk-color-white;
 }

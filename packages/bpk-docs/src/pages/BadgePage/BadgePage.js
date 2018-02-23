@@ -17,7 +17,7 @@
  */
 
 import React from 'react';
-import BpkBadge from 'bpk-component-badge';
+import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
 import { cssModules } from 'bpk-react-utils';
 
 import badgeReadme from 'bpk-component-badge/readme.md';
@@ -40,10 +40,29 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkBadge className={badgeClassName}>Apples</BpkBadge>,
-      <BpkBadge className={badgeClassName}>Bananas</BpkBadge>,
-      <BpkBadge className={badgeClassName}>Strawberries</BpkBadge>,
-      <BpkBadge>Pears</BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.GREEN} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.YELLOW} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.RED} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.GREEN} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.GRAY} className={badgeClassName}>
+        Charleston Gray Watermelon
+      </BpkBadge>,
+      <div style={{ backgroundColor: 'black', padding: '.2rem' }}>
+        <BpkBadge type={BADGE_TYPES.WHITE} className={badgeClassName}>
+          Mouldy orange
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
+          Really ripe banana
+        </BpkBadge>
+      </div>,
     ],
   },
   {
