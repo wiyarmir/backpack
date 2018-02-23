@@ -34,12 +34,12 @@ export const BADGE_TYPES = {
 const getClassName = cssModules(STYLES);
 
 const badgeTypeClassNames = {
-  yellow: null,
-  green: getClassName('bpk-badge--green'),
-  red: getClassName('bpk-badge--red'),
-  gray: getClassName('bpk-badge--gray'),
-  white: getClassName('bpk-badge--white'),
-  outline: getClassName('bpk-badge--outline'),
+  [BADGE_TYPES.YELLOW]: null,
+  [BADGE_TYPES.GREEN]: getClassName('bpk-badge--green'),
+  [BADGE_TYPES.RED]: getClassName('bpk-badge--red'),
+  [BADGE_TYPES.GRAY]: getClassName('bpk-badge--gray'),
+  [BADGE_TYPES.WHITE]: getClassName('bpk-badge--white'),
+  [BADGE_TYPES.OUTLINE]: getClassName('bpk-badge--outline'),
 };
 
 const BpkBadge = props => {
