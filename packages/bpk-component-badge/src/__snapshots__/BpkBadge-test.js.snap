@@ -2,7 +2,47 @@
 
 exports[`BpkBadge should render correctly 1`] = `
 <span
-  className="bpk-badge"
+  className="bpk-badge "
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly when gray 1`] = `
+<span
+  className="bpk-badge bpk-badge--gray"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly when green 1`] = `
+<span
+  className="bpk-badge bpk-badge--green"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly when outline 1`] = `
+<span
+  className="bpk-badge bpk-badge--outline"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly when red 1`] = `
+<span
+  className="bpk-badge bpk-badge--red"
+>
+  Promociando
+</span>
+`;
+
+exports[`BpkBadge should render correctly when white 1`] = `
+<span
+  className="bpk-badge bpk-badge--white"
 >
   Promociando
 </span>
@@ -10,7 +50,7 @@ exports[`BpkBadge should render correctly 1`] = `
 
 exports[`BpkBadge should render correctly with a "centered" 1`] = `
 <span
-  className="bpk-badge bpk-badge--centered"
+  className="bpk-badge  bpk-badge--centered"
 >
   Promociando
 </span>
@@ -18,7 +58,7 @@ exports[`BpkBadge should render correctly with a "centered" 1`] = `
 
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "left" 1`] = `
 <span
-  className="bpk-badge bpk-badge--docked-left"
+  className="bpk-badge  bpk-badge--docked-left"
 >
   Promociando
 </span>
@@ -26,7 +66,7 @@ exports[`BpkBadge should render correctly with a "docked" attribute value equal 
 
 exports[`BpkBadge should render correctly with a "docked" attribute value equal to "right" 1`] = `
 <span
-  className="bpk-badge bpk-badge--docked-right"
+  className="bpk-badge  bpk-badge--docked-right"
 >
   Promociando
 </span>

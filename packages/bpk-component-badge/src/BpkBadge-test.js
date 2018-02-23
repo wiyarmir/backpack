@@ -19,7 +19,7 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
 
-import BpkBadge from './BpkBadge';
+import BpkBadge, { BADGE_TYPES } from './BpkBadge';
 
 describe('BpkBadge', () => {
   it('should render correctly', () => {
@@ -44,6 +44,41 @@ describe('BpkBadge', () => {
   it('should render correctly with a "docked" attribute value equal to "left"', () => {
     const tree = renderer
       .create(<BpkBadge docked="left">Promociando</BpkBadge>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when green', () => {
+    const tree = renderer
+      .create(<BpkBadge type={BADGE_TYPES.GREEN}>Promociando</BpkBadge>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when red', () => {
+    const tree = renderer
+      .create(<BpkBadge type={BADGE_TYPES.RED}>Promociando</BpkBadge>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when gray', () => {
+    const tree = renderer
+      .create(<BpkBadge type={BADGE_TYPES.GRAY}>Promociando</BpkBadge>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when white', () => {
+    const tree = renderer
+      .create(<BpkBadge type={BADGE_TYPES.WHITE}>Promociando</BpkBadge>)
+      .toJSON();
+    expect(tree).toMatchSnapshot();
+  });
+
+  it('should render correctly when outline', () => {
+    const tree = renderer
+      .create(<BpkBadge type={BADGE_TYPES.OUTLINE}>Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

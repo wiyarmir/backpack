@@ -14,15 +14,14 @@ npm install bpk-component-badge --save-dev
 import React from 'react';
 import BpkBadge from 'bpk-component-badge';
 
-export default () => (
-  <BpkBadge>My Badge</BpkBadge>
-);
+export default () => <BpkBadge>My Badge</BpkBadge>;
 ```
 
 ## Props
 
-| Property  | PropType        | Required | Default Value |
-| --------- | --------------- | -------- | ------------- |
-| centered  | bool            | false    | null          |
-| docked    | 'left', 'right' | false    | null          |
-| className | string          | false    | null          |
+| Property  | PropType           | Required | Default Value      |
+| --------- | ------------------ | -------- | ------------------ |
+| centered  | bool               | false    | null               |
+| className | string             | false    | null               |
+| docked    | 'left', 'right'    | false    | null               |
+| type      | oneOf(BADGE_TYPES) | false    | BADGE_TYPES.YELLOW |
