@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'column',
     justifyContent: 'center',
-    padding: spacingBase,
+    // padding: spacingBase,
     width: '100%',
     marginTop: spacingLg,
   },
@@ -81,6 +81,7 @@ configure(() => {
   require('../packages/react-native-bpk-component-card/stories');
   require('../packages/react-native-bpk-component-horizontal-nav/stories');
   require('../packages/react-native-bpk-component-icon/stories');
+  require('../packages/react-native-bpk-component-phone-input/stories');
   require('../packages/react-native-bpk-component-spinner/stories');
   require('../packages/react-native-bpk-component-star-rating/stories');
   require('../packages/react-native-bpk-component-switch/stories');
