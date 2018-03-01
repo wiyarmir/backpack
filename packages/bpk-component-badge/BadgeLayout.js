@@ -32,7 +32,7 @@ const BadgeLayout = ({ docked, children }) => (
 
       if (
         docked ||
-        child.props.type === BADGE_TYPES.WHITE ||
+        child.props.type === BADGE_TYPES.INVERSE ||
         child.props.type === BADGE_TYPES.OUTLINE
       ) {
         classNames.push(getClassName('bpk-badge-layout__container--light'));

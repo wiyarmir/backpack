@@ -23,22 +23,22 @@ import { cssModules } from 'bpk-react-utils';
 import STYLES from './bpk-badge.scss';
 
 export const BADGE_TYPES = {
-  YELLOW: 'yellow',
-  GREEN: 'green',
-  RED: 'red',
-  GRAY: 'gray',
-  WHITE: 'white',
+  WARNING: 'warning',
+  SUCCESS: 'success',
+  DESTRUCTIVE: 'destructive',
+  LIGHT: 'light',
+  INVERSE: 'inverse',
   OUTLINE: 'outline',
 };
 
 const getClassName = cssModules(STYLES);
 
 const badgeTypeClassNames = {
-  [BADGE_TYPES.YELLOW]: null,
-  [BADGE_TYPES.GREEN]: getClassName('bpk-badge--green'),
-  [BADGE_TYPES.RED]: getClassName('bpk-badge--red'),
-  [BADGE_TYPES.GRAY]: getClassName('bpk-badge--gray'),
-  [BADGE_TYPES.WHITE]: getClassName('bpk-badge--white'),
+  [BADGE_TYPES.WARNING]: null,
+  [BADGE_TYPES.SUCCESS]: getClassName('bpk-badge--success'),
+  [BADGE_TYPES.DESTRUCTIVE]: getClassName('bpk-badge--destructive'),
+  [BADGE_TYPES.LIGHT]: getClassName('bpk-badge--light'),
+  [BADGE_TYPES.INVERSE]: getClassName('bpk-badge--inverse'),
   [BADGE_TYPES.OUTLINE]: getClassName('bpk-badge--outline'),
 };
 
@@ -64,11 +64,11 @@ const BpkBadge = props => {
 
 BpkBadge.propTypes = {
   type: PropTypes.oneOf([
-    BADGE_TYPES.YELLOW,
-    BADGE_TYPES.GREEN,
-    BADGE_TYPES.RED,
-    BADGE_TYPES.GRAY,
-    BADGE_TYPES.WHITE,
+    BADGE_TYPES.WARNING,
+    BADGE_TYPES.SUCCESS,
+    BADGE_TYPES.DESTRUCTIVE,
+    BADGE_TYPES.LIGHT,
+    BADGE_TYPES.INVERSE,
     BADGE_TYPES.OUTLINE,
   ]),
   docked: PropTypes.oneOf(['right', 'left', null]),
@@ -77,7 +77,7 @@ BpkBadge.propTypes = {
 };
 
 BpkBadge.defaultProps = {
-  type: BADGE_TYPES.YELLOW,
+  type: BADGE_TYPES.WARNING,
   docked: null,
   centered: false,
   className: null,

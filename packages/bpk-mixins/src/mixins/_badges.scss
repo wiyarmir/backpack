@@ -105,60 +105,60 @@
   }
 }
 
-/// Green badge. Modifies the bpk-badge mixin.
+/// Success badge. Modifies the bpk-badge mixin.
 ///
 /// @require {mixin} bpk-badge
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-badge();
-///     @include bpk-badge--green();
+///     @include bpk-badge--success();
 ///   }
 
-@mixin bpk-badge--green {
+@mixin bpk-badge--success {
   background-color: $bpk-color-green-500;
 }
 
-/// Red badge. Modifies the bpk-badge mixin.
+/// Destructive badge. Modifies the bpk-badge mixin.
 ///
 /// @require {mixin} bpk-badge
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-badge();
-///     @include bpk-badge--red();
+///     @include bpk-badge--destructive();
 ///   }
 
-@mixin bpk-badge--red {
+@mixin bpk-badge--destructive {
   background-color: $bpk-color-red-500;
   color: $bpk-color-white;
 }
 
-/// Gray badge. Modifies the bpk-badge mixin.
+/// Light badge. Modifies the bpk-badge mixin.
 ///
 /// @require {mixin} bpk-badge
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-badge();
-///     @include bpk-badge--gray();
+///     @include bpk-badge--light();
 ///   }
 
-@mixin bpk-badge--gray {
+@mixin bpk-badge--light {
   background-color: $bpk-color-gray-50;
 }
 
-/// White badge. Modifies the bpk-badge mixin.
+/// Inverse badge. Modifies the bpk-badge mixin.
 ///
 /// @require {mixin} bpk-badge
 ///
 /// @example scss
 ///   .selector {
 ///     @include bpk-badge();
-///     @include bpk-badge--white();
+///     @include bpk-badge--inverse();
 ///   }
 
-@mixin bpk-badge--white {
+@mixin bpk-badge--inverse {
   background-color: $bpk-color-white;
 }
 

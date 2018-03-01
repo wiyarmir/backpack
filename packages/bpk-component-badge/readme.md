@@ -24,4 +24,4 @@ export default () => <BpkBadge>My Badge</BpkBadge>;
 | centered  | bool               | false    | null               |
 | className | string             | false    | null               |
 | docked    | 'left', 'right'    | false    | null               |
-| type      | oneOf(BADGE_TYPES) | false    | BADGE_TYPES.YELLOW |
+| type      | oneOf(BADGE_TYPES) | false    | BADGE_TYPES.WARNING |

@@ -8,17 +8,17 @@ exports[`BpkBadge should render correctly 1`] = `
 </span>
 `;
 
-exports[`BpkBadge should render correctly when gray 1`] = `
+exports[`BpkBadge should render correctly when light 1`] = `
 <span
-  className="bpk-badge bpk-badge--gray"
+  className="bpk-badge bpk-badge--light"
 >
   Promociando
 </span>
 `;
 
-exports[`BpkBadge should render correctly when green 1`] = `
+exports[`BpkBadge should render correctly when success 1`] = `
 <span
-  className="bpk-badge bpk-badge--green"
+  className="bpk-badge bpk-badge--success"
 >
   Promociando
 </span>
@@ -32,17 +32,17 @@ exports[`BpkBadge should render correctly when outline 1`] = `
 </span>
 `;
 
-exports[`BpkBadge should render correctly when red 1`] = `
+exports[`BpkBadge should render correctly when destructive 1`] = `
 <span
-  className="bpk-badge bpk-badge--red"
+  className="bpk-badge bpk-badge--destructive"
 >
   Promociando
 </span>
 `;
 
-exports[`BpkBadge should render correctly when white 1`] = `
+exports[`BpkBadge should render correctly when inverse 1`] = `
 <span
-  className="bpk-badge bpk-badge--white"
+  className="bpk-badge bpk-badge--inverse"
 >
   Promociando
 </span>

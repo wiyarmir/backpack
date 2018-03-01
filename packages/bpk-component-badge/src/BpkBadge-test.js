@@ -48,30 +48,30 @@ describe('BpkBadge', () => {
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly when green', () => {
+  it('should render correctly when success', () => {
     const tree = renderer
-      .create(<BpkBadge type={BADGE_TYPES.GREEN}>Promociando</BpkBadge>)
+      .create(<BpkBadge type={BADGE_TYPES.SUCCESS}>Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly when red', () => {
+  it('should render correctly when destructive', () => {
     const tree = renderer
-      .create(<BpkBadge type={BADGE_TYPES.RED}>Promociando</BpkBadge>)
+      .create(<BpkBadge type={BADGE_TYPES.DESTRUCTIVE}>Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly when gray', () => {
+  it('should render correctly when light', () => {
     const tree = renderer
-      .create(<BpkBadge type={BADGE_TYPES.GRAY}>Promociando</BpkBadge>)
+      .create(<BpkBadge type={BADGE_TYPES.LIGHT}>Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });
 
-  it('should render correctly when white', () => {
+  it('should render correctly when inverse', () => {
     const tree = renderer
-      .create(<BpkBadge type={BADGE_TYPES.WHITE}>Promociando</BpkBadge>)
+      .create(<BpkBadge type={BADGE_TYPES.INVERSE}>Promociando</BpkBadge>)
       .toJSON();
     expect(tree).toMatchSnapshot();
   });

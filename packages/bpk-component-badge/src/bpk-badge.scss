@@ -33,20 +33,20 @@
     @include bpk-badge--docked-left;
   }
 
-  &--green {
-    @include bpk-badge--green;
+  &--success {
+    @include bpk-badge--success;
   }
 
-  &--red {
-    @include bpk-badge--red;
+  &--destructive {
+    @include bpk-badge--destructive;
   }
 
-  &--gray {
-    @include bpk-badge--gray;
+  &--light {
+    @include bpk-badge--light;
   }
 
-  &--white {
-    @include bpk-badge--white;
+  &--inverse {
+    @include bpk-badge--inverse;
   }
 
   &--outline {

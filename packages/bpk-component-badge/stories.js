@@ -47,24 +47,29 @@ storiesOf('bpk-component-badge', module)
       <BpkBadge docked="left">Promocionado</BpkBadge>
     </BadgeLayout>
   ))
-  .add('Green', () => (
+  .add('Warning (Default)', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.GREEN}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.WARNING}>Promocionado</BpkBadge>
     </BadgeLayout>
   ))
-  .add('Red', () => (
+  .add('Success', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.RED}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.SUCCESS}>Promocionado</BpkBadge>
     </BadgeLayout>
   ))
-  .add('Gray', () => (
+  .add('Destructive', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.GRAY}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.DESTRUCTIVE}>Promocionado</BpkBadge>
     </BadgeLayout>
   ))
-  .add('White', () => (
+  .add('Light', () => (
     <BadgeLayout>
-      <BpkBadge type={BADGE_TYPES.WHITE}>Promocionado</BpkBadge>
+      <BpkBadge type={BADGE_TYPES.LIGHT}>Promocionado</BpkBadge>
+    </BadgeLayout>
+  ))
+  .add('Inverse', () => (
+    <BadgeLayout>
+      <BpkBadge type={BADGE_TYPES.INVERSE}>Promocionado</BpkBadge>
     </BadgeLayout>
   ))
   .add('Outline', () => (
