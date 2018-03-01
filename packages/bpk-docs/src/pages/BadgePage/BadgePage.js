@@ -18,6 +18,8 @@
 
 import React from 'react';
 import BpkBadge, { BADGE_TYPES } from 'bpk-component-badge';
+import BadgeLayout from 'bpk-component-badge/BadgeLayout';
+
 import { cssModules } from 'bpk-react-utils';
 
 import badgeReadme from 'bpk-component-badge/readme.md';
@@ -40,29 +42,10 @@ const components = [
       </Paragraph>,
     ],
     examples: [
-      <BpkBadge type={BADGE_TYPES.GREEN} className={badgeClassName}>
-        Apples
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.YELLOW} className={badgeClassName}>
-        Bananas
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.RED} className={badgeClassName}>
-        Strawberries
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.GREEN} className={badgeClassName}>
-        Pears
-      </BpkBadge>,
-      <BpkBadge type={BADGE_TYPES.GRAY} className={badgeClassName}>
-        Charleston Gray Watermelon
-      </BpkBadge>,
-      <div style={{ backgroundColor: 'black', padding: '.2rem' }}>
-        <BpkBadge type={BADGE_TYPES.WHITE} className={badgeClassName}>
-          Mouldy orange
-        </BpkBadge>
-        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
-          Really ripe banana
-        </BpkBadge>
-      </div>,
+      <BpkBadge className={badgeClassName}>Apples</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Bananas</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Strawberries</BpkBadge>,
+      <BpkBadge className={badgeClassName}>Pears</BpkBadge>,
     ],
   },
   {
@@ -100,6 +83,99 @@ const components = [
         Strawberries
       </BpkBadge>,
       <BpkBadge centered>Pears</BpkBadge>,
+    ],
+  },
+  {
+    id: 'success',
+    title: 'Success',
+    blurb: [
+      <Paragraph>The success badge is a green color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.SUCCESS} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.SUCCESS} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.SUCCESS} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.SUCCESS} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'destructive',
+    title: 'Destructive',
+    blurb: [
+      <Paragraph>
+        The destructive badge is a red color as shown below.
+      </Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.DESTRUCTIVE} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.DESTRUCTIVE} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.DESTRUCTIVE} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.DESTRUCTIVE} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'light',
+    title: 'Light',
+    blurb: [
+      <Paragraph>The light badge is a gray color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BpkBadge type={BADGE_TYPES.LIGHT} className={badgeClassName}>
+        Apples
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.LIGHT} className={badgeClassName}>
+        Bananas
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.LIGHT} className={badgeClassName}>
+        Strawberries
+      </BpkBadge>,
+      <BpkBadge type={BADGE_TYPES.LIGHT} className={badgeClassName}>
+        Pears
+      </BpkBadge>,
+    ],
+  },
+  {
+    id: 'inverse',
+    title: 'Inverse',
+    blurb: [
+      <Paragraph>The inverse badge is a green color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.INVERSE} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+      </BadgeLayout>,
+    ],
+  },
+  {
+    id: 'outline',
+    title: 'Outline',
+    blurb: [
+      <Paragraph>The outline badge is a dark color as shown below.</Paragraph>,
+    ],
+    examples: [
+      <BadgeLayout>
+        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
+          Apples
+        </BpkBadge>
+      </BadgeLayout>,
     ],
   },
 ];
