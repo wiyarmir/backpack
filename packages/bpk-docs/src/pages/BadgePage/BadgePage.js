@@ -153,13 +153,20 @@ const components = [
   {
     id: 'inverse',
     title: 'Inverse',
-    blurb: [
-      <Paragraph>The inverse badge is a green color as shown below.</Paragraph>,
-    ],
+    blurb: [<Paragraph>The inverse badge is white as shown below.</Paragraph>],
     examples: [
       <BadgeLayout>
         <BpkBadge type={BADGE_TYPES.INVERSE} className={badgeClassName}>
           Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.INVERSE} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.INVERSE} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.INVERSE} className={badgeClassName}>
+          Pears
         </BpkBadge>
       </BadgeLayout>,
     ],
@@ -168,12 +175,23 @@ const components = [
     id: 'outline',
     title: 'Outline',
     blurb: [
-      <Paragraph>The outline badge is a dark color as shown below.</Paragraph>,
+      <Paragraph>
+        The outline badge has a somewhat transparent background as shown below.
+      </Paragraph>,
     ],
     examples: [
       <BadgeLayout>
         <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
           Apples
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
+          Bananas
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
+          Strawberries
+        </BpkBadge>
+        <BpkBadge type={BADGE_TYPES.OUTLINE} className={badgeClassName}>
+          Pears
         </BpkBadge>
       </BadgeLayout>,
     ],

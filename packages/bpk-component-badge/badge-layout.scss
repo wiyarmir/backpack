@@ -19,15 +19,11 @@
 @import '~bpk-mixins/index';
 
 .bpk-badge-layout {
-  position: relative;
-  display: flex;
-  min-height: $bpk-spacing-xxl;
-  flex-direction: column;
-
   &__container {
+    position: relative;
     display: flex;
+    min-height: $bpk-spacing-xxl;
     padding: $bpk-spacing-base;
-    justify-content: center;
 
     &--light {
       background-color: $bpk-color-gray-700;

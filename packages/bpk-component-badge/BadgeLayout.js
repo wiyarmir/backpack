@@ -25,23 +25,19 @@ import STYLES from './badge-layout.scss';
 
 const getClassName = cssModules(STYLES);
 
-const BadgeLayout = ({ docked, children }) => (
-  <div className={getClassName('bpk-badge-layout')}>
-    {Children.map(children, child => {
-      const classNames = [getClassName('bpk-badge-layout__container')];
+const BadgeLayout = ({ docked, children }) => {
+  const classNames = [getClassName('bpk-badge-layout__container')];
 
-      if (
-        docked ||
-        child.props.type === BADGE_TYPES.INVERSE ||
-        child.props.type === BADGE_TYPES.OUTLINE
-      ) {
-        classNames.push(getClassName('bpk-badge-layout__container--light'));
-      }
+  if (
+    docked ||
+    Children.toArray(children)[0].props.type === BADGE_TYPES.INVERSE ||
+    Children.toArray(children)[0].props.type === BADGE_TYPES.OUTLINE
+  ) {
+    classNames.push(getClassName('bpk-badge-layout__container--light'));
+  }
 
-      return <div className={classNames.join(' ')}>{child}</div>;
-    })}
-  </div>
-);
+  return <div className={classNames.join(' ')}>{children}</div>;
+};
 
 BadgeLayout.propTypes = {
   docked: PropTypes.bool,
